@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="bg-white p-8 rounded-xl shadow-md text-center">
+  <p class="text-lg text-gray-700 mb-6">¿Estás segura de que deseas eliminar esta publicación?</p>
+  <form method="POST" class="space-x-4">
+    {% csrf_token %}
+    <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded shadow">
+      Eliminar
+    </button>
+    <a href="{% url 'blog:home' %}" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded shadow">
+      Cancelar
+    </a>
+  </form>
+</div>
+{% endblock %}
